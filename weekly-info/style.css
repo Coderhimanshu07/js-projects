@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background: #ffffff;
+}
+
+.day-container img {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+}
+
+h2 {
+    color: darkblue;
+}

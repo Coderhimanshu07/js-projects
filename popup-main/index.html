@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Popup Forms</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <!-- Body part there -->
+
+    <body>
+        <h1>PopUp Form</h1>
+        <div class="btn-container">
+            <button onclick="openPopup('Contact For Frontend Development')">
+                Contact For Frontend Development
+            </button>
+            <button onclick="openPopup('Contact For Backend Development')">
+                Contact For Backend Development
+            </button>
+            <button onclick="openPopup('Contact For Full Stack Development')">
+                Contact For Full Stack Development
+            </button>
+            <button onclick="openPopup('Contact For Web Apps Development')">
+                Contact For Web Apps Development
+            </button>
+        </div>
+
+        <!-- Popup Overlay -->
+        <div id="overlay" class="overlay" onclick="closePopup(event)">
+            <div
+                id="popupForm"
+                class="popup-form"
+                onclick="event.stopPropagation()"
+            >
+                <span class="close-btn" onclick="closePopup(event)">X</span>
+
+                <!-- Form there -->
+                <h2 id="form-Title"></h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required />
+                    <input type="email" placeholder="Your Email" required />
+                    <input type="tel" placeholder="Your Phone" required />
+                    <textarea
+                        name="message"
+                        rows="3"
+                        id=""
+                        placeholder="Enter Your Message Here"
+                    ></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
