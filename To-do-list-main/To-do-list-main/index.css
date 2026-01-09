@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  height: 90vh; /* full screen height */
+  margin: 0;
+  background: url(./img/image.png);
+  background-size: cover; /* makes the image cover the whole area */
+  background-position: center; /* keeps image centered */
+  background-repeat: no-repeat; /* stops tiling of image */
+  background-attachment: fixed;
+}
+
+/* Main container box */
+.container {
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 25px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Input field styling */
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: 0.3s;
+}
+
+#btn1{
+    background: green;
+}
+
+#btn2{
+    background-color: red;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Remove button style */
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Task list styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url("./img/mobile_background.jpg"); /* your resized mobile image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

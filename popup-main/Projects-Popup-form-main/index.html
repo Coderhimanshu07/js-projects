@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Forms</title>
+    <style>
+
+
+        /* Internal css */
+
+      body {
+        font-family: Arial, sans-serif;
+        background: black;
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      body h1 {
+        background: bisque;
+        border: 2px solid white;
+        border-radius: 20px 0;
+        color: black;
+        padding: 20px;
+      }
+
+      .btn-container {
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 20px 30px;
+        margin: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: pink;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: rgb(214, 74, 154);
+        color: white;
+      }
+
+      /* Popup overlay */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        /* z-index: 1000; */
+      }
+
+      /* Popup form box */
+      .popup-form {
+        background: pink;
+        color: black;
+        width: 350px;
+        padding: 20px;
+        padding-right: 35px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .popup-form h2 {
+        text-align: center;
+        color: black;
+        margin-bottom: 15px;
+      }
+
+      .popup-form input,
+      .popup-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .popup-form button {
+        width: 100%;
+        background-color: black;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .popup-form button:hover {
+        background-color: white;
+        color: black;
+      }
+
+      /* Close button */
+      .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        font-size: 20px;
+        color: #555;
+        cursor: pointer;
+      }
+
+      .close-btn:hover {
+        color: red;
+      }
+
+      @keyframes fadeIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- Body part there -->
+
+
+  <body>
+    <h1>PopUp Form</h1>
+    <div class="btn-container">
+      <button onclick="openPopup('Contact For Frontend Development')">
+        Contact For Frontend Development
+      </button>
+      <button onclick="openPopup('Contact For Backend Development')">
+        Contact For Backend Development
+      </button>
+      <button onclick="openPopup('Contact For Full Stack Development')">
+        Contact For Full Stack Development
+      </button>
+      <button onclick="openPopup('Contact For Web Apps Development')">
+        Contact For Web Apps Development
+      </button>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="overlay" class="overlay" onclick="closePopup(event)">
+      <div id="popupForm" class="popup-form" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closePopup(event)">X</span>
+
+        <!-- Form there -->
+        <h2 id="form-Title"></h2>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="tel" placeholder="Your Phone" required />
+          <textarea
+            name="message"
+            rows="3"
+            id=""
+            placeholder="Enter Your Message Here"
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+        <!-- JavaScript part there -->
+
+    <script>
+      let formTitle = document.getElementById("form-Title");
+      let overlay = document.getElementById("overlay");
+
+      // Function to open popup
+      function openPopup(title) {
+        formTitle.textContent = title;
+        overlay.style.display = "flex";
+      }
+
+      // Function to close popup
+      function closePopup(event) {
+        overlay.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
